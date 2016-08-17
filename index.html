@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="plateoApp">
+
+<head>
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <link rel="stylesheet" href="./main.css" />
+    <!-- load angular and angular route via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="mainController">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Plateo</a>
+                </div> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#plateSearch"><i class="fa fa-search"></i> Find</a></li>
+                    <li><a href="#myPlates"><i class="fa fa-comment"></i> My Plates</a></li> <!-- needs to be a ng-if="loggedIn"-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="main">
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>
