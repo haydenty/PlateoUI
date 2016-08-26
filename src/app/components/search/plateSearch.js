@@ -1,7 +1,3 @@
-// (function () {
-  // 'use strict';
-  // var plateoApp = angular.module('plateoApp');
-
 plateoApp.controller('searchController', function ($scope, $location, plateService) {
     var vm = $scope;
     vm.states = [
@@ -87,4 +83,3 @@ plateoApp.controller('searchController', function ($scope, $location, plateServi
       $location.path('plate');
     };
 });
-// }());

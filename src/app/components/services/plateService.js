@@ -1,6 +1,3 @@
-// (function () {
-  // 'use strict';
-  // var plateoApp = angular.module('plateoApp');
 plateoApp.service('plateService', function($q){
   var plateToShow; //FIXME: Check to see if this is good practice to share across controllers, if not remove all references(getter, setter)
   return {
@@ -119,4 +116,3 @@ plateoApp.service('plateService', function($q){
       }
   };
 });
-// }());
