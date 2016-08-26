@@ -5,12 +5,26 @@
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <!-- <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" /> -->
 
     <link rel="stylesheet" href="./main.css" />
     <!-- load angular and angular route via CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script> -->
+
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routes.js"></script>
+    <script src="/app/components/home/home.js"></script>
+    <script src="/app/components/myPlates/myPlates.js"></script>
+    <script src="/app/components/plate/plate.js"></script>
+    <script src="/app/components/search/plateSearch.js"></script>
+    <script src="/app/components/services/plateService.js"></script>
+    <script src="/app/shared/login/login.js"></script>
+    <script src="/app/shared/register/register.js"></script>
+
 </head>
 
 <body ng-controller="mainController">
