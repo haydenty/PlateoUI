@@ -8,7 +8,7 @@ plateoApp.controller('plateController', function($scope, plateService) {
             alert('Error occurred trying to follow plate: ', JSON.stringify(response)); //TODO: handle error appro.
         });
     };
-    vm.addComment = function() {
+    vm.addComment = function() { //TODO add validation for blank text box
         const plate = vm.plate;
         const comment = {
             username: 'test', //TODO: authentication stuff
@@ -19,6 +19,7 @@ plateoApp.controller('plateController', function($scope, plateService) {
         var addCommentPromise = plateService.addComment(plate, comment);
         addCommentPromise.then(function(response) {
             vm.plate = response;
+            vm.newComment = "";
         }, function(response) {
             alert('Error happened adding comment on plate: ', JSON.stringify(response)); //TODO: appropriate error handling toastr, maybe
         });
