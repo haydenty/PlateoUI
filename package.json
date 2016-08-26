@@ -1,0 +1,16 @@
+{
+  "name": "plateo",
+  "description": "app that tracks conversations by license plates",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.2",
+    "angular-route": "^1.4.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1"
+  }
+}
