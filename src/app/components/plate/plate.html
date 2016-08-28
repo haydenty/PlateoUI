@@ -11,9 +11,9 @@
             <div class="table-responsive">
                 <table class="table">
                     <tbody>
-                        <tr ng-repeat="convo in plate.conversation">
+                        <tr ng-repeat="comment in comments">
                             <td>
-                                {{convo.username}}: {{convo.message}}, {{convo.createdDateTime}}
+                                {{comment.user.username}}: {{comment.comment}}, {{comment.createdDateTime}}
                             </td>
                         </tr>
                         <tr>

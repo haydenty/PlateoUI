@@ -14,16 +14,22 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <!-- <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/angular-route/angular-route.min.js"></script> -->
-
+    <script src="index.constants.js"></script>
     <script src="/app/app.module.js"></script>
     <script src="/app/app.routes.js"></script>
+    <script src="/app/app.run.js"></script>
+
+    <script src="/app/components/services/userService.js"></script>
+    <script src="/app/components/services/plateService.js"></script>
+
+    <script src="/app/shared/login/auth.factory.js"></script>
+    <script src="/app/shared/login/login.js"></script>
+    <script src="/app/shared/register/register.js"></script>
+
     <script src="/app/components/home/home.js"></script>
     <script src="/app/components/myPlates/myPlates.js"></script>
     <script src="/app/components/plate/plate.js"></script>
     <script src="/app/components/search/plateSearch.js"></script>
-    <script src="/app/components/services/plateService.js"></script>
-    <script src="/app/shared/login/login.js"></script>
-    <script src="/app/shared/register/register.js"></script>
 
 </head>
 
@@ -37,7 +43,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#plateSearch"><i class="fa fa-search"></i> Find</a></li>
-                    <li><a href="#myPlates"><i class="fa fa-comment"></i> My Plates</a></li> <!-- needs to be a ng-if="loggedIn"-->
+                    <li ng-show="showMenu"><a href="#myPlates"><i class="fa fa-comment"></i> My Plates</a></li>
+                    <li ng-show="showMenu"><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
                 </ul>
             </div>
         </nav>

@@ -71,7 +71,7 @@ plateoApp.controller('searchController', function ($scope, $location, plateServi
       var searchPlatePromise = plateService.searchPlates(plateNum, state);
       searchPlatePromise.then(function(response){
           vm.searchResultPlates = response;
-          if(vm.searchResultPlates.length === 0)
+          if(vm.searchResultPlates.length === 0)//Adding plate if doesn't exist
               vm.searchComplete = true;
       }, function(response){
          alert('Error occured while searching for plate: ', JSON.stringify(response));

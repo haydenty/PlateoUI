@@ -1,30 +1,47 @@
-plateoApp.config(function ($routeProvider) {
+plateoApp.config(function($routeProvider, $httpProvider) {
+    $httpProvider.interceptors.push('TokenInterceptor');
+
     $routeProvider
         .when('/', {
             templateUrl: 'app/components/home/home.html',
-            controller: 'mainController'
+            controller: 'mainController',
+            access: {
+                requiredLogin: false
+            }
         })
-
-    .when('/plateSearch', {
+        .when('/plateSearch', {
             templateUrl: 'app/components/search/plateSearch.html',
-            controller: 'searchController'
+            controller: 'searchController',
+            access: {
+                requiredLogin: false
+            }
         })
         .when('/myPlates', { //TODO: this requires login, other views that have follow buttons should use ng-if="loggedIn"
             templateUrl: 'app/components/myPlates/myPlates.html',
-            controller: 'myPlatesController'
+            controller: 'myPlatesController',
+            access: {
+                requiredLogin: true
+            }
         })
-
-    .when('/plate', { //TODO: pass plate obj as parameter
-        templateUrl: 'app/components/plate/plate.html',
-        controller: 'plateController'
-    })
-
-    .when('/login', {
+        .when('/plate', { //TODO: pass plate obj as parameter
+          templateUrl: 'app/components/plate/plate.html',
+          controller: 'plateController',
+          access: {
+              requiredLogin: false
+          }
+      })
+      .when('/login', {
             templateUrl: 'app/shared/login/login.html',
-            controller: 'loginController'
+            controller: 'loginController',
+            access: {
+                requiredLogin: false
+            }
         })
         .when('/register', {
             templateUrl: 'app/shared/register/register.html',
-            controller: 'registerController'
+            controller: 'loginController', //TODO: split controllers
+            access: {
+                requiredLogin: false
+            }
         })
 });
