@@ -1,4 +1,4 @@
-plateoApp.run(function ($rootScope, $window, $location, AuthenticationFactory, userService) {
+plateoApp.run(function ($rootScope, $window, $location, AuthenticationFactory) {
     // when the page refreshes, check if the user is already logged in
     AuthenticationFactory.check();
 

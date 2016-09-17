@@ -2,8 +2,10 @@ plateoApp.factory('AuthenticationFactory', function ($window) {
     var auth = {
         isLogged: false,
         check: function () {
+          console.log('Checking the magic!');
             if ($window.localStorage.token && $window.localStorage.user) {
                 this.isLogged = true;
+                this.user = $window.localStorage.user;
             } else {
                 this.isLogged = false;
                 delete this.user;
@@ -13,7 +15,8 @@ plateoApp.factory('AuthenticationFactory', function ($window) {
     return auth;
 });
 
-plateoApp.factory('UserAuthFactory', function ($window, $location, $http, AuthenticationFactory, userService) {
+plateoApp.factory('UserAuthFactory', function ($window, $location, $http, constants, AuthenticationFactory) {
+  var baseUrl = constants.apis.plateoApiBaseUrl;
     return {
         login: function (username, password) {
             return $http.post(baseUrl + 'login', {
@@ -29,7 +32,7 @@ plateoApp.factory('UserAuthFactory', function ($window, $location, $http, Authen
                 delete $window.localStorage.token;
                 delete $window.localStorage.user;
                 delete $window.localStorage.userRole;
-                userService.setCurrentUser({});
+
                 $location.path("/login");
             }
         },

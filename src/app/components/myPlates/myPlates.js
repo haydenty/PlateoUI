@@ -9,6 +9,6 @@ plateoApp.controller('myPlatesController', function($scope, $location, plateServ
     getMyPlatesPromise.then(function(response) {
         vm.myPlates = response;
     }, function(response) {
-        alert('Error happened getting my plates: ', JSON.stringify(response)); //TODO: appropriate error handling toastr, maybe
+        //alert('Error happened getting my plates: ', JSON.stringify(response)); //TODO: appropriate error handling toastr, maybe
     });
 });
